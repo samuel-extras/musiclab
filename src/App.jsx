@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
-
 import { Searchbar, Sidebar, MusicPlayer, TopPlay } from './components';
 import {
   ArtistDetails,
@@ -12,9 +11,10 @@ import {
   TopCharts,
 } from './pages';
 
+console.log(import.meta.env.VITE_GEO_API_KEY);
+
 const App = () => {
   const { activeSong } = useSelector((state) => state.player);
-
   return (
     <div className="relative flex w-full h-[100vh]">
       <Sidebar />

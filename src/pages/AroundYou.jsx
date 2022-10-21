@@ -15,13 +15,15 @@ const AroundYou = () => {
     axios
       .get(
         // eslint-disable-next-line comma-dangle
-        'https://geo.ipify.org/api/v2/country?apiKey=at_ocyjdBWcDF107sMtNRTv4p2cATg9L'
+        `https://geo.ipify.org/api/v2/country?apiKey=at_${
+          import.meta.env.VITE_GEO_API_KEY
+        }`
       )
       .then((res) => setCountry(res?.data?.location?.country))
       .catch((err) => console.log(err))
       .finally(() => setIsLoading(false));
   }, [country]);
-
+  console.log(country);
   if (isFetching && isLoading) <Loader title="Loading songs around you..." />;
   if (error && country) return <Error />;
   return (
