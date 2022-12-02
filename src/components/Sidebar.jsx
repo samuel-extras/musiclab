@@ -33,7 +33,7 @@ const Sidebar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <>
-      <div className="hidden flex-col w-[200px] py-8 bg-[#191624] md:flex">
+      <div className="hidden flex-col w-[200px] py-8 bg-[#191624] lg:flex">
         <img
           src="https://www.transparentpng.com/thumb/music/png-music-clipart-5.png"
           alt="logo"
@@ -42,7 +42,7 @@ const Sidebar = () => {
         <NavLinks />
       </div>
 
-      <div className="absolute block top-6 right-3 md:hidden z-10">
+      <div className="absolute block top-6 right-3 lg:hidden z-10">
         {mobileMenuOpen ? (
           <RiCloseLine
             className="w-6 h-6 text-white mr-2"
@@ -56,11 +56,15 @@ const Sidebar = () => {
         )}
       </div>
       <div
-        className={`absolute top-0 h-screen w-2/4 bg-gradient-to-tl from-white/10 to-[#483d8b] backdrop-blur-lg z-10 p-6 md:hidden scroll-smooth ${
+        className={`absolute top-0 h-screen w-2/4 bg-gradient-to-tl from-white/10 to-[#483d8b] backdrop-blur-lg z-10 p-6 lg:hidden scroll-smooth ${
           mobileMenuOpen ? 'left-0' : '-left-full'
         } `}
       >
-        <img src={logo} alt="logo" className="w-full h-14 object-contain" />
+        <img
+          src="https://www.transparentpng.com/thumb/music/png-music-clipart-5.png"
+          alt="logo"
+          className="w-full h-14 object-contain"
+        />
         <NavLinks handleClick={() => setMobileMenuOpen(false)} />
       </div>
     </>

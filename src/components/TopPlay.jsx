@@ -18,33 +18,33 @@ const TopChartCard = ({
   handlePause,
   handlePlay,
 }) => (
-  <div className="w-full flex flex-row items-center hover:bg-[#4c426e] py-2 p-4 rounded-lg cursor-pointer mb-2">
+  <div className="flex flex-row items-center hover:bg-[#4c426e] py-2 p-4 rounded-lg cursor-pointer mb-2">
     <h3 className="font-bold text-base text-white mr-3">{i + 1}.</h3>
-    <div className="flex flex-row flex-1 min-w-0 justify-between items-center">
+    <div className="flex flex-1 min-w-0 ">
       <img src={song?.images?.coverart} className="w-16 h-16 rounded-lg" />
-      <div className="flex flex-col flex-grow justify-center mx-3 truncate min-w-0">
-        <Link to={`/songs/${song?.key}`}>
-          <p className="text-lg font-bold text-white break-all truncate">
-            {song?.title}
+      <div className="flex flex-col mx-3 truncate ">
+        <Link className="truncate" to={`/songs/${song?.key}`}>
+          <p className="text-lg font-bold text-white truncate">
+            {song.title.length > 12
+              ? `${song.title.slice(0, 11)}...`
+              : song.title}
           </p>
         </Link>
         <Link to={`/songs/${song?.artists[0].adamid}`}>
-          <p className="text-sm text-gray-300 mt-1 block break-all text-ellipsis truncate">
+          <p className="text-sm text-gray-300 mt-1 break-all truncate">
             {song?.subtitle}
           </p>
         </Link>
       </div>
     </div>
-    <div className="inline-block">
-      <PlayPause
-        isPlaying={isPlaying}
-        activeSong={activeSong}
-        song={song}
-        i={i}
-        handlePause={handlePause}
-        handlePlay={handlePlay}
-      />
-    </div>
+    <PlayPause
+      isPlaying={isPlaying}
+      activeSong={activeSong}
+      song={song}
+      i={i}
+      handlePause={handlePause}
+      handlePlay={handlePlay}
+    />
   </div>
 );
 
@@ -70,7 +70,7 @@ const TopPlay = () => {
   return (
     <div
       ref={divRef}
-      className="flex flex-col ml-0 mb-4 flex-1 overflow-y-auto max-w-full xl:ml-6 xl:mb-0 xl:max-w-[400px]"
+      className="flex flex-col ml-0 mb-4 max-w-full xl:ml-6 xl:mb-0 xl:max-w-[400px]"
     >
       <div className="w-full flex flex-col">
         <div className="flex flex-row justify-between items-center">

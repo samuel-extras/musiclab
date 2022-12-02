@@ -40,7 +40,7 @@ const Discover = () => {
           ))}
         </select>
       </div>{' '}
-      <div className="flex flex-wrap justify-center gap-2 md:gap-4  ">
+      <div className="flex flex-wrap items-center justify-center gap-1 md:gap-4  ">
         {data?.map((song, i) => (
           <SongCard
             key={song.key}
