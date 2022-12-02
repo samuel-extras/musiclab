@@ -33,6 +33,7 @@ export const shazamCoreApi = createApi({
     }),
     getSongsBySearch: builder.query({
       query: (searchTerm) =>
+        // eslint-disable-next-line implicit-arrow-linebreak
         `/search/multi?search_type=SONGS_ARTISTS&query=${searchTerm}`,
     }),
   }),

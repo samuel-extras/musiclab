@@ -34,7 +34,11 @@ const Sidebar = () => {
   return (
     <>
       <div className="hidden flex-col w-[200px] py-8 bg-[#191624] md:flex">
-        <img src={logo} alt="logo" className="w-full h-14 object-contain" />
+        <img
+          src="https://www.transparentpng.com/thumb/music/png-music-clipart-5.png"
+          alt="logo"
+          className="w-full h-14 object-contain"
+        />
         <NavLinks />
       </div>
 

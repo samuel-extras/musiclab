@@ -11,8 +11,6 @@ import {
   TopCharts,
 } from './pages';
 
-console.log(import.meta.env.VITE_GEO_API_KEY);
-
 const App = () => {
   const { activeSong } = useSelector((state) => state.player);
   return (
